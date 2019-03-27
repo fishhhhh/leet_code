@@ -1,0 +1,96 @@
+import org.junit.Assert;
+import org.junit.Test;
+import solution.define.ListNode;
+import solution.q0001.Solution;
+
+public class TestSolution {
+    
+    @Test
+    public void q0001() {
+        
+        Solution solution = new Solution();
+        Assert.assertArrayEquals(new int[] { 0, 1 }, solution.twoSum(new int[] { 2, 7, 11, 15 }, 9));
+    }
+    
+    @Test
+    public void q0002() {
+        
+        solution.q0002.Solution solution = new solution.q0002.Solution();
+        ListNode x = new ListNode(2);
+        x.next = new ListNode(4);
+        x.next.next = new ListNode(3);
+        
+        ListNode y = new ListNode(5);
+        y.next = new ListNode(6);
+        y.next.next = new ListNode(4);
+        ListNode result = solution.addTwoNumbers(x, y);
+        StringBuilder target = new StringBuilder();
+        do {
+            target.append(result.val);
+            result = result.next;
+        } while (result != null);
+        Assert.assertEquals(target.toString(), "708");
+    }
+    
+    @Test
+    public void q0003() {
+        
+        solution.q0003.Solution solution = new solution.q0003.Solution();
+        Assert.assertEquals(3, solution.lengthOfLongestSubstring("abcabcbb"));
+        Assert.assertEquals(1, solution.lengthOfLongestSubstring("bbbbb"));
+        Assert.assertEquals(3, solution.lengthOfLongestSubstring("pwwkew"));
+    }
+    
+    @Test
+    public void q0004() {
+        
+        solution.q0004.Solution solution = new solution.q0004.Solution();
+        Assert.assertEquals(2.0d, solution.findMedianSortedArrays(new int[] { 1, 3 }, new int[] { 2 }), 0);
+        Assert.assertEquals(2.5d, solution.findMedianSortedArrays(new int[] { 1, 3 }, new int[] { 2, 4 }), 0);
+    }
+    
+    @Test
+    public void q0005() {
+        
+        solution.q0005.Solution solution = new solution.q0005.Solution();
+        Assert.assertEquals("bab", solution.longestPalindrome("babad"));
+        Assert.assertEquals("bb", solution.longestPalindrome("cbbd"));
+    }
+    
+    @Test
+    public void q0006() {
+        
+        solution.q0006.Solution solution = new solution.q0006.Solution();
+        Assert.assertEquals("LCIRETOESIIGEDHN", solution.convert("LEETCODEISHIRING", 3));
+        Assert.assertEquals("LDREOEIIECIHNTSG", solution.convert("LEETCODEISHIRING", 4));
+    }
+    
+    @Test
+    public void q0007() {
+        
+        solution.q0007.Solution solution = new solution.q0007.Solution();
+        Assert.assertEquals(321, solution.reverse(123));
+        Assert.assertEquals(-321, solution.reverse(-123));
+        Assert.assertEquals(21, solution.reverse(120));
+    }
+    
+    @Test
+    public void q0008() {
+        
+        solution.q0008.Solution solution = new solution.q0008.Solution();
+        Assert.assertEquals(42, solution.myAtoi("42"));
+        Assert.assertEquals(-42, solution.myAtoi("   -42"));
+        Assert.assertEquals(4193, solution.myAtoi("4193 with words"));
+        Assert.assertEquals(0, solution.myAtoi("words and 987"));
+        Assert.assertEquals(-2147483648, solution.myAtoi("-91283472332"));
+    }
+    
+    @Test
+    public void q0009() {
+        
+        solution.q0009.Solution solution = new solution.q0009.Solution();
+        Assert.assertTrue(solution.isPalindrome(121));
+        Assert.assertFalse(solution.isPalindrome(-121));
+        Assert.assertFalse(solution.isPalindrome(10));
+    }
+}
