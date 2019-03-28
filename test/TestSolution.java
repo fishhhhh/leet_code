@@ -93,4 +93,23 @@ public class TestSolution {
         Assert.assertFalse(solution.isPalindrome(-121));
         Assert.assertFalse(solution.isPalindrome(10));
     }
+    
+    @Test
+    public void q0010() {
+        
+        solution.q0010.Solution solution = new solution.q0010.Solution();
+        Assert.assertFalse(solution.isMatch("aa", "a"));
+        Assert.assertTrue(solution.isMatch("aa", "a*"));
+        Assert.assertTrue(solution.isMatch("ab", ".*"));
+        Assert.assertTrue(solution.isMatch("aab", "c*a*b"));
+        Assert.assertFalse(solution.isMatch("mississippi", "mis*is*p*."));
+    }
+    
+    @Test
+    public void q0011() {
+        
+        solution.q0011.Solution solution = new solution.q0011.Solution();
+        Assert.assertEquals(49, solution.maxArea(new int[] { 1, 8, 6, 2, 5, 4, 8, 3, 7 }));
+
+    }
 }
