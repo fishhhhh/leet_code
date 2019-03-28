@@ -1,5 +1,6 @@
 import org.junit.Assert;
 import org.junit.Test;
+
 import solution.define.ListNode;
 import solution.q0001.Solution;
 
@@ -111,5 +112,27 @@ public class TestSolution {
         solution.q0011.Solution solution = new solution.q0011.Solution();
         Assert.assertEquals(49, solution.maxArea(new int[] { 1, 8, 6, 2, 5, 4, 8, 3, 7 }));
 
+    }
+
+    @Test
+    public void q0012() {
+        
+        solution.q0012.Solution solution = new solution.q0012.Solution();
+        Assert.assertEquals("III", solution.intToRoman(3));
+        Assert.assertEquals("IV", solution.intToRoman(4));
+        Assert.assertEquals("IX", solution.intToRoman(9));
+        Assert.assertEquals("LVIII", solution.intToRoman(58));
+        Assert.assertEquals("MCMXCIV", solution.intToRoman(1994));
+    }
+
+    @Test
+    public void q0013(){
+
+        solution.q0013.Solution solution = new solution.q0013.Solution();
+        Assert.assertEquals( 3, solution.romanToInt( "III" ) );
+        Assert.assertEquals( 4, solution.romanToInt( "IV" ) );
+        Assert.assertEquals( 9, solution.romanToInt( "IX" ) );
+        Assert.assertEquals( 58, solution.romanToInt( "LVIII" ) );
+        Assert.assertEquals( 1994, solution.romanToInt( "MCMXCIV" ) );
     }
 }
