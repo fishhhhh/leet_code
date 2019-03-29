@@ -4,6 +4,9 @@ import org.junit.Test;
 import solution.define.ListNode;
 import solution.q0001.Solution;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class TestSolution {
     
     @Test
@@ -111,9 +114,9 @@ public class TestSolution {
         
         solution.q0011.Solution solution = new solution.q0011.Solution();
         Assert.assertEquals(49, solution.maxArea(new int[] { 1, 8, 6, 2, 5, 4, 8, 3, 7 }));
-
+        
     }
-
+    
     @Test
     public void q0012() {
         
@@ -124,15 +127,49 @@ public class TestSolution {
         Assert.assertEquals("LVIII", solution.intToRoman(58));
         Assert.assertEquals("MCMXCIV", solution.intToRoman(1994));
     }
-
+    
     @Test
-    public void q0013(){
-
+    public void q0013() {
+        
         solution.q0013.Solution solution = new solution.q0013.Solution();
-        Assert.assertEquals( 3, solution.romanToInt( "III" ) );
-        Assert.assertEquals( 4, solution.romanToInt( "IV" ) );
-        Assert.assertEquals( 9, solution.romanToInt( "IX" ) );
-        Assert.assertEquals( 58, solution.romanToInt( "LVIII" ) );
-        Assert.assertEquals( 1994, solution.romanToInt( "MCMXCIV" ) );
+        Assert.assertEquals(3, solution.romanToInt("III"));
+        Assert.assertEquals(4, solution.romanToInt("IV"));
+        Assert.assertEquals(9, solution.romanToInt("IX"));
+        Assert.assertEquals(58, solution.romanToInt("LVIII"));
+        Assert.assertEquals(1994, solution.romanToInt("MCMXCIV"));
+    }
+    
+    @Test
+    public void q0014() {
+        
+        solution.q0014.Solution solution = new solution.q0014.Solution();
+        Assert.assertEquals("fl", solution.longestCommonPrefix(new String[] { "flower", "flow", "flight" }));
+        Assert.assertEquals("", solution.longestCommonPrefix(new String[] { "dog", "racecar", "car" }));
+    }
+    
+    @Test
+    public void q0015() {
+        
+        solution.q0015.Solution solution = new solution.q0015.Solution();
+        Assert.assertEquals( new ArrayList< List<Integer> >( ){{
+            add( new ArrayList<Integer>(  ){{
+                add( -1 );
+                add( -1 );
+                add( 2 );
+            }} );
+            add( new ArrayList<Integer>(  ){{
+                add( -1 );
+                add( 0 );
+                add( 1 );
+            }} );
+        }}, solution.threeSum( new int[]{-1, 0, 1, 2, -1, -4} ));
+    }
+    
+    @Test
+    public void q0016() {
+        
+        solution.q0016.Solution solution = new solution.q0016.Solution();
+        Assert.assertEquals(2, solution.threeSumClosest(new int[] { -1, 2, 1, -4 }, 1));
+        Assert.assertEquals(2, solution.threeSumClosest(new int[] { 1, 1, -1, -1, 3 }, -1));
     }
 }
