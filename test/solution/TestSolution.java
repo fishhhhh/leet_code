@@ -1,3 +1,5 @@
+package solution;
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -170,6 +172,6 @@ public class TestSolution {
         
         solution.q0016.Solution solution = new solution.q0016.Solution();
         Assert.assertEquals(2, solution.threeSumClosest(new int[] { -1, 2, 1, -4 }, 1));
-        Assert.assertEquals(2, solution.threeSumClosest(new int[] { 1, 1, -1, -1, 3 }, -1));
+        Assert.assertEquals(-1, solution.threeSumClosest(new int[] { 1, 1, -1, -1, 3 }, -1));
     }
 }
