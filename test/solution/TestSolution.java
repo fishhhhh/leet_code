@@ -7,6 +7,7 @@ import solution.define.ListNode;
 import solution.q0001.Solution;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class TestSolution {
@@ -166,12 +167,42 @@ public class TestSolution {
             }} );
         }}, solution.threeSum( new int[]{-1, 0, 1, 2, -1, -4} ));
     }
-    
+
     @Test
     public void q0016() {
-        
+
         solution.q0016.Solution solution = new solution.q0016.Solution();
         Assert.assertEquals(2, solution.threeSumClosest(new int[] { -1, 2, 1, -4 }, 1));
         Assert.assertEquals(-1, solution.threeSumClosest(new int[] { 1, 1, -1, -1, 3 }, -1));
+    }
+
+    @Test
+    public void q0017() {
+        
+        solution.q0017.Solution solution = new solution.q0017.Solution();
+        List<String> list = Arrays.asList("ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf");
+        Assert.assertEquals(list, solution.letterCombinations("23"));
+    }
+    
+    @Test
+    public void q0018() {
+        
+        solution.q0018.Solution solution = new solution.q0018.Solution();
+        List<List<Integer>> result1 = Arrays
+                .asList(Arrays.asList(-2, -1, 1, 2), Arrays.asList(-2, 0, 0, 2), Arrays.asList(-1, 0, 0, 1));
+        Assert.assertEquals(result1, solution.fourSum(new int[] { 1, 0, -1, 0, -2, 2 }, 0));
+        
+        List<List<Integer>> result2 = Arrays.asList(Arrays.asList(-3, -1, 2, 4));
+        Assert.assertEquals(result2, solution.fourSum(new int[] { -3, -1, 0, 2, 4, 5 }, 2));
+        
+        List<List<Integer>> result3 = Arrays.asList(Arrays.asList(-3, -2, 2, 3),
+                Arrays.asList(-3, -1, 1, 3),
+                Arrays.asList(-3, 0, 0, 3),
+                Arrays.asList(-3, 0, 1, 2),
+                Arrays.asList(-2, -1, 0, 3),
+                Arrays.asList(-2, -1, 1, 2),
+                Arrays.asList(-2, 0, 0, 2),
+                Arrays.asList(-1, 0, 0, 1));
+        Assert.assertEquals(result3, solution.fourSum(new int[]{-3, -2, -1, 0, 0, 1, 2, 3}, 0));
     }
 }
