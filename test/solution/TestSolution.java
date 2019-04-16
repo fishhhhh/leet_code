@@ -203,6 +203,75 @@ public class TestSolution {
                 Arrays.asList(-2, -1, 1, 2),
                 Arrays.asList(-2, 0, 0, 2),
                 Arrays.asList(-1, 0, 0, 1));
-        Assert.assertEquals(result3, solution.fourSum(new int[]{-3, -2, -1, 0, 0, 1, 2, 3}, 0));
+        Assert.assertEquals(result3, solution.fourSum(new int[] { -3, -2, -1, 0, 0, 1, 2, 3 }, 0));
+    }
+    
+    @Test
+    public void q0019() {
+        
+        solution.q0019.Solution solution = new solution.q0019.Solution();
+        ListNode param = new ListNode(1);
+        param.next = new ListNode(2);
+        param.next.next = new ListNode(3);
+        param.next.next.next = new ListNode(4);
+        param.next.next.next.next = new ListNode(5);
+        
+        Assert.assertEquals("1->2->3->5", solution.removeNthFromEnd(param, 2).toString());
+        
+        Assert.assertNull(solution.removeNthFromEnd(new ListNode(1), 1));
+        ListNode param2 = new ListNode(1);
+        param2.next = new ListNode(2);
+        Assert.assertEquals("2", solution.removeNthFromEnd(param2, 2).toString());
+    }
+    
+    @Test
+    public void q0020() {
+        
+        solution.q0020.Solution solution = new solution.q0020.Solution();
+        Assert.assertTrue(solution.isValid("()"));
+        Assert.assertTrue(solution.isValid("()[]{}"));
+        Assert.assertFalse(solution.isValid("(]"));
+        Assert.assertFalse(solution.isValid("([)]"));
+        Assert.assertTrue(solution.isValid("{[]}"));
+        Assert.assertFalse(solution.isValid("]}"));
+    }
+    
+    @Test
+    public void q0021() {
+        
+        solution.q0021.Solution solution = new solution.q0021.Solution();
+        ListNode param1 = new ListNode(1);
+        param1.next = new ListNode(2);
+        param1.next.next = new ListNode(4);
+        ListNode param2 = new ListNode(1);
+        param2.next = new ListNode(3);
+        param2.next.next = new ListNode(5);
+        Assert.assertEquals("1->1->2->3->4->5", solution.mergeTwoLists(param1, param2).toString());
+    }
+    
+    @Test
+    public void q0022() {
+        
+        solution.q0022.Solution solution = new solution.q0022.Solution();
+        Assert.assertEquals(Arrays.asList("()"), solution.generateParenthesis(1));
+        Assert.assertEquals(Arrays.asList("(())", "()()"), solution.generateParenthesis(2));
+        Assert.assertEquals(Arrays.asList("((()))", "(()())", "(())()", "()(())", "()()()"),
+                solution.generateParenthesis(3));
+    }
+    
+    @Test
+    public void q0023() {
+        
+        solution.q0023.Solution solution = new solution.q0023.Solution();
+        ListNode param1 = new ListNode(1);
+        param1.next = new ListNode(4);
+        param1.next.next = new ListNode(5);
+        ListNode param2 = new ListNode(1);
+        param2.next = new ListNode(3);
+        param2.next.next = new ListNode(4);
+        ListNode param3 = new ListNode(2);
+        param3.next = new ListNode(6);
+        Assert.assertEquals("1->1->2->3->4->4->5->6",
+                solution.mergeKLists(new ListNode[] { param1, param2, param3 }).toString());
     }
 }
