@@ -1,14 +1,12 @@
 package solution;
 
-import org.junit.Assert;
-import org.junit.Test;
-
-import solution.define.ListNode;
-import solution.q0001.Solution;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.junit.Assert;
+import org.junit.Test;
+import solution.define.ListNode;
+import solution.q0001.Solution;
 
 public class TestSolution {
     
@@ -273,5 +271,21 @@ public class TestSolution {
         param3.next = new ListNode(6);
         Assert.assertEquals("1->1->2->3->4->4->5->6",
                 solution.mergeKLists(new ListNode[] { param1, param2, param3 }).toString());
+    }
+
+    @Test
+    public void q0024() {
+        solution.q0024.Solution solution = new solution.q0024.Solution();
+        Assert.assertEquals(null, solution.swapPairs(null));
+        Assert.assertEquals(ListNode.build("1"), solution.swapPairs(ListNode.build("1")));
+        Assert.assertEquals(ListNode.build("2->1->4->3"), solution.swapPairs(ListNode.build("1->2->3->4")));
+    }
+
+    @Test
+    public void q0025() {
+        solution.q0025.Solution solution = new solution.q0025.Solution();
+//        Assert.assertEquals(null, solution.reverseKGroup(null, 1));
+//        Assert.assertEquals(ListNode.build("1->2->3"), solution.reverseKGroup(ListNode.build("1->2->3"), 1));
+        Assert.assertEquals(ListNode.build("3->2->1"), solution.reverseKGroup(ListNode.build("1->2->3"), 3));
     }
 }
